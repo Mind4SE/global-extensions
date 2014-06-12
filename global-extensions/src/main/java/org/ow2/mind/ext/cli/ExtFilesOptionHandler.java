@@ -32,7 +32,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
 
-import org.objectweb.fractal.adl.util.ClassLoaderHelper;
 import org.objectweb.fractal.adl.util.FractalADLLogManager;
 import org.ow2.mind.cli.CmdOption;
 import org.ow2.mind.cli.CmdPathOption;
