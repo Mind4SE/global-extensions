@@ -24,6 +24,7 @@ package org.ow2.mind.ext.cli;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLDecoder;
 import java.util.ArrayList;
@@ -105,7 +106,12 @@ public class ExtFilesOptionHandler implements CommandOptionHandler {
 				continue;
 			}
 			
-			f = new File(extURL.getPath());
+			try {
+				f = new File(extURL.toURI());
+			} catch (URISyntaxException e) {
+				logger.warning("'" + extURL.toString() + "' extension path syntax is invalid: " + e.getMessage());
+				continue;
+			}
 			
 			if (!f.exists()) {
 				logger.warning("'" + f.getAbsolutePath() + "' extension can't be found ");
