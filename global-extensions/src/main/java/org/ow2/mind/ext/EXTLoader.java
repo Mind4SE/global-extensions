@@ -42,6 +42,9 @@ import org.ow2.mind.adl.AbstractDelegatingLoader;
 import org.ow2.mind.adl.ast.ASTHelper;
 import org.ow2.mind.adl.ast.Binding;
 import org.ow2.mind.adl.ast.BindingContainer;
+import org.ow2.mind.adl.ast.Component;
+import org.ow2.mind.adl.ast.ComponentContainer;
+import org.ow2.mind.adl.ast.DefinitionReference;
 import org.ow2.mind.adl.ast.ImplementationContainer;
 import org.ow2.mind.adl.ast.MindInterface;
 import org.ow2.mind.adl.ast.Source;
@@ -471,6 +474,34 @@ public class EXTLoader extends AbstractDelegatingLoader {
 		}
 	}
 
+	/**
+	 * TODO: Optimize this ugly heavy algorithm !
+	 * @param ext
+	 * @param definition
+	 * @throws ADLException 
+	 */
+	private void applyContains(Definition ext, Definition definition) throws ADLException {
+		for (Component extContains : ((ComponentContainer) ext).getComponents()) {
+			String extContainsName = extContains.getName();
+			String extContainsDefName = extContains.getDefinitionReference().getName();
+			
+			for (Component comp : ((ComponentContainer) definition).getComponents()) {
+
+				String compContainsName = comp.getName();
+				DefinitionReference compContainsDefRef = comp.getDefinitionReference();
+				String compContainsDefName = "";
+				if (compContainsDefRef!=null) compContainsDefName = compContainsDefRef.getName();
+				
+				if (((extContainsDefName.equals("**.*") || extContainsDefName.equals(compContainsDefName))) &&
+						(extContainsName.equals("*") || extContainsName.equals(compContainsName))) {
+
+					// apply annotations to the targeted contains
+					applyAnnotations(extContains, comp);
+				} 
+			}
+		}
+	}
+	
 	/* Adding sub-components isn't useful yet with Mind
 	private void applyComponent(ComponentContainer ext, ComponentContainer container) {
 		// only adding new component is supported at the moment
@@ -597,8 +628,10 @@ public class EXTLoader extends AbstractDelegatingLoader {
 							applyContent(ext, definition);
 
 						// Here we need to check
-						if (ASTHelper.isComposite(ext) && ASTHelper.isComposite(definition))
+						if (ASTHelper.isComposite(ext) && ASTHelper.isComposite(definition)) {
 							applyBindings(ext, definition);
+							applyContains(ext, definition);
+						}
 					} catch (ADLException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
