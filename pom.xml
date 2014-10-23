@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.ow2.mind</groupId>
+        <artifactId>mind-compiler</artifactId>
+        <version>2.1-SNAPSHOT</version>
+    </parent>
+
+    <name>global-extensions</name>
+    <description>Global extension aka Deployment Style Sheet (DSS)</description>
+
+    <packaging>pom</packaging>
+
+    <artifactId>global-extensions</artifactId>
+    <groupId>org.ow2.mind</groupId>
+    <version>2.1-SNAPSHOT</version>
+
+    <developers>
+        <developer>
+            <id>sseyvoz</id>
+            <name>Stephane Seyvoz</name>
+            <email>sseyvoz@assystem.com</email>
+            <organization>Assystem</organization>
+        </developer>
+    </developers>
+
+	<contributors>
+	</contributors>
+
+    <modules>
+        <module>ext-loader</module>
+        <module>ext-parser</module>
+    </modules>
+
+
+</project>
