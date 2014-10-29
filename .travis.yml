@@ -12,14 +12,14 @@ install:
   - "cd ext-parser"
   - "mvn -U clean"
   - "cd .."
-  - "cd global-extensions"
+  - "cd ext-loader"
   - "mvn -U clean"
   - "cd .."
 script:
   - "cd ext-parser"
   - "mvn -U install"
   - "cd .."
-  - "cd global-extensions"
+  - "cd ext-loader"
   - "mvn -U verify"
   
   
