@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section[
+<!ENTITY % myents SYSTEM "../shared.ent" >
+%myents;
+]>
+<section xml:id="Deployment-Style-Sheet_aim" xmlns="http://docbook.org/ns/docbook" version="5.0"
+  xml:lang="en">
+  <title>Aim of the &productName;</title>
+  <para>The <emphasis>&productName;</emphasis> feature of the Mindc compiler is a convenient way to
+    apply annotations to customize Mind components without having to modify the Mind components
+    files.</para>
+  <para>The aim is to keep Mind components that are generic as not modified, but to be able to tweak
+    them for the specific needs of the application where they are used.</para>
+</section>
