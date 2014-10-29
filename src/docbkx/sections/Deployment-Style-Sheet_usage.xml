@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section[
+<!ENTITY % myents SYSTEM "../shared.ent" >
+%myents;
+]>
+<section xml:id="Deployment-Style-Sheet_usage" xmlns="http://docbook.org/ns/docbook" version="5.0" xml:lang="en">
+  <title>Usage</title>
+  <section>
+    <title>Pre-requisites</title>
+    <para>The files: <filename>ext-loader*.jar</filename> and <filename>ext-parser*.jar</filename>
+      are required in the <filename>ext</filename> sub-directory of the Mind C compiler
+      directory.</para>  
+  </section>
+  <section>
+    <title>Parameters</title>
+    <para>To activate the &productName; for a compilation, the options <code>--ext-files</code> or
+        <code>-E</code> must be used with the <command>mindc</command> command line to provide the
+      extension <filename>.ext</filename> files.</para>
+    <para>To provide several files to the Mindc compiler, either a list of files can be provided to
+      the options <code>--ext-files</code> or <code>-E</code>, or the options
+        <code>--ext-files</code> or <code>-E</code> can be used several times on the
+        <command>mindc</command> command line.</para>
+   
+  </section>
+</section>
