@@ -22,12 +22,12 @@
 		</moduleSet>
 	</moduleSets>
 	
-	<files>
+	<!--files>
 		<file>
 			<source>target/site/Deployment-Style-Sheet.pdf</source>
 			<fileMode>0644</fileMode>
 			<outputDirectory>doc</outputDirectory>
 			<filtered>true</filtered>
 		</file>
-	</files>
+	</files-->
 </assembly>
