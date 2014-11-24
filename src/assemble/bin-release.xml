@@ -8,19 +8,17 @@
 	
 	<includeBaseDirectory>true</includeBaseDirectory>
 	
-	<moduleSets>
-		<moduleSet>
-			<binaries>
-				<outputDirectory>ext</outputDirectory>
-				<unpack>false</unpack>
-			</binaries>
-			
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>ext</outputDirectory>
+			<unpack>false</unpack>
 			<includes>
-				<include>${project.groupId}:ext-parser:jar:${project.version}</include>
-				<include>${project.groupId}:ext-loader:jar:${project.version}</include>
+				<include>${project.groupId}:ext-parser:jar</include>
+				<include>${project.groupId}:ext-loader:jar</include>
 			</includes>
-		</moduleSet>
-	</moduleSets>
+			<fileMode>0644</fileMode>
+		</dependencySet>
+	</dependencySets>
 	
 	<!--files>
 		<file>
