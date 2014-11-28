@@ -59,7 +59,7 @@ primitive **.* {
           <example>
             <title>In all composites named "<code>stack</code>", whatever the package, singletonize
             them and put the bindings as <code>@Static</code></title>
-            <programlisting language="adl" linenumbering= "unnumbered">@Singleton
+            <programlisting language="adl" linenumbering="unnumbered">@Singleton
 @StaticBindings(true)
 composite **.stack {
 }</programlisting>
@@ -72,7 +72,7 @@ composite **.stack {
       <example>
         <title>Enable use of extra debugging information for source code of all primitives
             (<command>gcc</command> compiler)</title>
-        <programlisting language="adl" linenumbering= "unnumbered">primitive **.* {
+        <programlisting language="adl" linenumbering="unnumbered">primitive **.* {
   @CFlags("-g")
   source*;
 }</programlisting>
@@ -86,7 +86,7 @@ composite **.stack {
       </note>
         <example>
         <title>Enable use of <command>gcov</command> coverage testing tool</title>
-        <programlisting language="adl" linenumbering= "unnumbered">primitive **.* {
+        <programlisting language="adl" linenumbering="unnumbered">primitive **.* {
   @CFlags("-O0 -fprofile-arcs -ftest-coverage")
   source*;
 }</programlisting>
