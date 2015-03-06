@@ -46,7 +46,10 @@
             shortName="E"
             longName="ext-files"
             description="A list of extension files (without .ext, and separated by ':' on Linux or ';' on Windows)"
-            argDesc="&lt;files list&gt;" />
+            argDesc="&lt;files list&gt;">
+            <processAfter
+                id="org.ow2.mind.mindc.SrcPath" />
+        </cmdPathOption>
 
     </extension>
 
