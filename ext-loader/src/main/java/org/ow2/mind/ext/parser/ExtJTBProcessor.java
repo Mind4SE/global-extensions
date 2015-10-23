@@ -1429,12 +1429,12 @@ implements EXTJTBParser, ParserConstants {
 
 		for (final org.ow2.mind.ext.jtb.syntaxtree.Node pathElem : n.f4.nodes) {
 			s += "/"
-					+ ((NodeToken) ((NodeSequence) pathElem).elementAt(1)).tokenImage;
+					+ ((NodeToken) ((NodeChoice) ((NodeSequence) pathElem).elementAt(1)).choice).tokenImage;
 		}
 
 		if (n.f5.present()) {
 			s += "."
-					+ ((NodeToken) ((NodeSequence) (n.f5.node)).elementAt(1)).tokenImage;
+					+ ((NodeToken) ((NodeChoice) ((NodeSequence) (n.f5.node)).elementAt(1)).choice).tokenImage;
 		}
 
 		return s;
